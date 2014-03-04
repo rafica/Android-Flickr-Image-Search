@@ -29,8 +29,21 @@ public class MainActivity extends Activity {
 		btnSearch = (Button) findViewById(R.id.btnSearch);
 		//btnSearch.setOnClickListener(this);
 		
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        // TODO Auto-generated method stub
+                    	Intent intent = new Intent(getBaseContext(), ResultActivity.class);
+                    	intent.putExtra("QUERY", etSearch.getText().toString());
+                    	startActivity(intent);
+                    }
+                });
+
+ }
 		
-	}
+	
 	
 	public void doLaunchContactPicker(View view) {
 	    Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,
