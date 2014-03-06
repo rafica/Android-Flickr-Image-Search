@@ -9,10 +9,6 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-
-
-
-import android.util.Log;
 import android.util.Xml;
 
 public class FlickrParser {
@@ -33,7 +29,7 @@ public class FlickrParser {
    		private Entry entry;
 	    public List<Entry> parse(InputStream in) throws XmlPullParserException, IOException {
 	        try {
-	        	Log.d("flickrparser", "in parse");
+	      
 	            XmlPullParser parser = Xml.newPullParser();
 	            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
 	            parser.setInput(in, null);
@@ -47,15 +43,11 @@ public class FlickrParser {
 
 	    private List<Entry> readFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
 	        
-	    	Log.d("flickrparser", "in readfeed");
-	    	
-	    	
-	    	Log.d("readfeed", parser.getName());
+
 
 	    	int eventType = parser.getEventType();
 	    	while (eventType != XmlPullParser.END_DOCUMENT) {
                 String tagname = parser.getName();
-                Log.d("readfeed", "tagname "+tagname);
                 switch (eventType) {
                 case XmlPullParser.START_TAG:
                     if (tagname.equalsIgnoreCase("photo")) {
@@ -73,24 +65,21 @@ public class FlickrParser {
                         entry.setDate(date);
                         entry.setOwner(owner);
                         entry.setUrl("http://farm"+farmId+".staticflickr.com/"+serverId+"/"+ photoId +"_"+secret+"_m.jpg");
-                    	Log.d("readfeed", "start tag photo. Date is "+date+" Owner is "+owner + " Url is "+entry.getUrl());
+
                     	
                     }
                     break;
  
                 case XmlPullParser.TEXT:
                     text = parser.getText();
-                    Log.d("readfeed", "text "+text);
                     break;
  
                 case XmlPullParser.END_TAG:
                 	
                     if (tagname.equalsIgnoreCase("photo")) {
                         // add employee object to list
-                    	Log.d("readfeed", "end tag photo");
                         entries.add(entry);
                     } else if (tagname.equalsIgnoreCase("description")) {
-                    	Log.d("readfeed","setting description "+text);
                     	entry.setDescription(text);
                     } 
                     break;

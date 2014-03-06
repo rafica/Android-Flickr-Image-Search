@@ -4,12 +4,8 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -33,7 +29,7 @@ public class LazyAdapter extends BaseAdapter {
 
     public int getCount() {
         return data.size();
-    }
+    } 
 
     public Object getItem(int position) {
         return position;

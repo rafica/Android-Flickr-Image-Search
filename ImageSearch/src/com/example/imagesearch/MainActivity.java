@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -60,7 +59,6 @@ public class MainActivity extends Activity {
 
 	            try {
 	                Uri result = data.getData();
-	                String id = result.getLastPathSegment();
 
 	                //Get Name
 	                cursor = getContentResolver().query(result, null, null, null, null);

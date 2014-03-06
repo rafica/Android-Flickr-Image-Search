@@ -8,5 +8,5 @@
     <string name="button_search">Go!</string>
     <string name="contact_picker">Contact picker</string>
     <string name="tag_name">Tag Name</string>
-
+	<string name="list_image">Image</string>
 </resources>
