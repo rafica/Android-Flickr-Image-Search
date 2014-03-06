@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent" 
+    android:background="@drawable/background">
 
     <LinearLayout
         android:id="@+id/llSearch"
@@ -17,34 +18,36 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_weight="9"
+            android:layout_weight="7"
             android:drawableRight="@drawable/edit_search"
-            android:hint="tag name"
+            android:hint="@string/tag_name"
             android:imeOptions="actionSearch"
             android:inputType="textNoSuggestions"
             android:singleLine="true" />
 
         <Button
             android:id="@+id/btnSearch"
-            android:layout_width="0dp"
+            android:layout_width="118dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_marginTop="2dp"
-            android:layout_weight="2"
-            android:text="Go!" />
+            android:text="@string/button_search" 
+            android:background="@drawable/blue_button"/>
+
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/do_email_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/llSearch"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="23dp"
-        android:onClick="doLaunchContactPicker"
-        android:text="pick_email_label" />
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/add_contact"
+        android:focusable="true"
+        android:onClick="doLaunchContactPicker" />
     
     </RelativeLayout>

@@ -16,7 +16,7 @@ import android.util.Log;
 import android.util.Xml;
 
 public class FlickrParser {
-	   private static final String ns = null;
+	   //private static final String ns = null;
 
 	    // We don't use namespaces
 
